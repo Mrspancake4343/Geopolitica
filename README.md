@@ -56,7 +56,7 @@ Nation
 
 ## Building
 
-You can build the Geopolitica plugin yourself using Java 21 and the Maven tool.
+You can build Geopolitica yourself using Java 21 and Maven .
 
 ## Configuration
 
@@ -66,7 +66,7 @@ You can change the settings for Geopolitica in the configuration file.
 
 |---|---|---|
 
-| storage type | sqlite | The type of database to use. |
+| storage type | sqlite | The type of database used (MySQL to be added) |
 
 Town min name length | 3 | The minimum length of a town's name.
 
