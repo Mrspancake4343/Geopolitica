@@ -1,0 +1,60 @@
+# Geopolitica configuration.
+# All monetary values require Vault + an economy plugin; if none is present,
+# economy features (costs, upkeep, bank accounts) are silently disabled.
+
+storage:
+  # Only 'sqlite' is implemented so far; 'mysql' is reserved for a future
+  # release (for shared storage across a multi-server network).
+  type: sqlite
+  mysql:
+    host: localhost
+    port: 3306
+    database: geopolitica
+    username: geopolitica
+    password: ''
+    useSSL: false
+
+town:
+  # Minimum resident-chosen name length.
+  min-name-length: 3
+  max-name-length: 32
+  # Maximum chunks a town may claim. -1 for unlimited.
+  max-claims: 64
+  # Free claims granted on town creation before claims start costing money.
+  free-claims: 4
+  # Cost (via Vault) to claim each additional chunk beyond the free amount.
+  cost-per-claim: 500.0
+  # Refund given per chunk when unclaiming.
+  refund-per-claim: 250.0
+  # If true, every claimed chunk (after the town's first) must be
+  # orthogonally adjacent to another chunk already claimed by the same town.
+  require-adjacent-claims: true
+  # Minimum number of unclaimed chunks that must separate two different
+  # towns' claims. 0 disables the check.
+  min-distance-between-towns: 0
+  # Daily upkeep charged per claimed chunk. Set to 0 to disable upkeep.
+  upkeep-per-claim-per-day: 5.0
+  # What happens to a town that cannot pay upkeep: WARN, RANDOM_UNCLAIM, FREEZE
+  upkeep-failure-action: WARN
+
+claims:
+  # Default permission matrix applied to newly claimed chunks.
+  default-permissions:
+    RESIDENT:
+      BUILD: true
+      DESTROY: true
+      INTERACT: true
+      CONTAINER: true
+      PVP: false
+    OUTSIDER:
+      BUILD: false
+      DESTROY: false
+      INTERACT: false
+      CONTAINER: false
+      PVP: false
+
+general:
+  # Language file to load from the plugin's lang/ folder.
+  language: en_US
+  # Players with geopolitica.admin bypass all claim protection automatically.
+  admin-bypass: true

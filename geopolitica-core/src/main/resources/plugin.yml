@@ -1,0 +1,40 @@
+name: Geopolitica
+version: '${project.version}'
+main: com.geopolitica.core.GeopoliticaPlugin
+api-version: '1.21'
+load: STARTUP
+authors: [Geopolitica]
+description: Towns, states and nations with a comprehensive API for roleplay servers.
+# Map/placeholder integrations will be added to this list once implemented (Phase 4).
+softdepend: [Vault]
+
+commands:
+  town:
+    description: Manage towns.
+    usage: /town <new|delete|claim|unclaim|join|leave|kick|rank|deposit|withdraw|sethome|home|description|color|open|pvp|gui|info|list> [args]
+    aliases: [t]
+  nation:
+    description: Manage nations and states.
+    usage: /nation <new|delete|join|leave|deposit|withdraw|description|color|open|war|peace|ally|state|gui|info|list> [args]
+    aliases: [n]
+  gadmin:
+    description: Geopolitica administration commands.
+    usage: /gadmin <reload|freeze|unfreeze|delete|setbank|nation|state> [args]
+    permission: geopolitica.admin
+
+permissions:
+  geopolitica.admin:
+    description: Full administrative access to Geopolitica.
+    default: op
+  geopolitica.town.create:
+    description: Allows creating a town.
+    default: true
+  geopolitica.town.claim:
+    description: Allows claiming chunks for your town.
+    default: true
+  geopolitica.town.bypass:
+    description: Bypass claim protection.
+    default: op
+  geopolitica.nation.create:
+    description: Allows founding a nation.
+    default: true
