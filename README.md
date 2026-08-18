@@ -1,6 +1,6 @@
 # Geopolitica
 
-Geopolitica is a plugin for Minecraft servers that lets players build their countries. Players can make **towns**. These **towns** can join together to make **states**. These **states** can then join together to make **nations**. Each **town** **state** and **nation** has its bank and leader.
+Geopolitica is a plugin for Minecraft servers that lets players build towns, states, and nations. Players can make **towns**. These **towns** can join together to make **states**. These **states** can then join together to make **nations**. Each **town** **state** and **nation** has its bank and leader.
 
 ## Political Hierarchy
 
